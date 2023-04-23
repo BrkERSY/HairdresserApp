@@ -41,7 +41,7 @@ function MyTabBar({state, descriptors, navigation}) {
     <View
       style={{
         flexDirection: 'row',
-        backgroundColor: '#254162',
+        backgroundColor: 'purple',
         height: 60,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -120,10 +120,10 @@ function MyTabBar({state, descriptors, navigation}) {
                   <View
                     style={{
                       elevation: 10,
-                      backgroundColor: '#3A5471',
+                      backgroundColor: 'red',
                       width: 70,
                       height: 25,
-                      borderRadius: 50,
+                      borderRadius: 10,
                       marginBottom: -35,
                     }}></View>
                   {Platform.OS == 'ios' && (
@@ -247,16 +247,7 @@ function CustomDrawerContent(props) {
     <Box style={{flex: 1}}>
       <Box flex={0.9} bgColor={'#30294D'}>
         <View style={{alignItems: 'center', marginTop: 50}}>
-          <Image
-            style={{width: 80, height: 80, borderRadius: 40}}
-            source={
-              state.staffInfo.profilResmi == null
-                ? require('./res/Drawer/avatar2.png')
-                : {
-                    uri: 'data:image/png;base64,' + state.staffInfo.profilResmi,
-                  }
-            }
-          />
+          <Icon size={32} color="white" name="user" />
 
           <Text style={{color: 'white', marginTop: 10}}>
             {state.staffInfo.adSoyad}
@@ -271,10 +262,7 @@ function CustomDrawerContent(props) {
         bgColor={'#30294D'}>
         <TouchableOpacity
           onPress={async () => {
-            await storeStringAS('telNo', '');
-
-            let storeTelNo = await getStringAS('telNo');
-            console.log('storeTelNo3', storeTelNo);
+            await storeStringAS('eMail', '');
 
             dispatch({type: 'USER_NO'});
           }}
@@ -286,10 +274,11 @@ function CustomDrawerContent(props) {
               borderBottomWidth: 0.0,
             }}>
             <View style={{justifyContent: 'center'}}>
-              <Image
-                style={{width: 18, height: 18}}
-                //  resizeMode={'center'}
-                source={require('./res/Drawer/cikisYap.png')}
+              <Icon
+                color="white"
+                size={16}
+                name="sign-out-alt"
+                style={{marginTop: 2}}
               />
             </View>
             <View style={{justifyContent: 'center', paddingLeft: 10}}>
@@ -334,7 +323,7 @@ export default () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 0);
+    }, 2000);
   }, []);
 
   const [state, dispatch] = useReducer(reducer, initialState);

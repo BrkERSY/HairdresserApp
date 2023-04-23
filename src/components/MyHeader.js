@@ -16,7 +16,7 @@ export default MyHeader = props => {
       style={{
         flexDirection: 'row',
         height: 50,
-        backgroundColor: '#244161',
+        backgroundColor: 'purple',
         padding: 15,
       }}>
       <View style={{justifyContent: 'center', flex: 1}}>
@@ -44,12 +44,7 @@ export default MyHeader = props => {
           justifyContent: 'center',
           alignItems: 'flex-end',
           flex: 1,
-        }}>
-        <Image
-          style={{width: 30, height: 30}}
-          source={require('../res/Header/ixirlifeLogo.png')}
-        />
-      </View>
+        }}></View>
     </Box>
   );
 };

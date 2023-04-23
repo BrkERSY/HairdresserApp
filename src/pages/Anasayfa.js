@@ -46,10 +46,10 @@ const Dashboard = ({navigation, route}) => {
 
   return (
     <SafeAreaView flex={1}>
-      <StatusBar barStyle="light-content" backgroundColor="#254162" />
+      <StatusBar barStyle="light-content" backgroundColor="purple" />
       <MyHeader navigation={navigation} isHome={true} title={''} />
 
-      <Box flex={1} bgColor={'#292B4D'}>
+      <Box flex={1} bgColor={'#fff'}>
         Anasayfa
       </Box>
     </SafeAreaView>
