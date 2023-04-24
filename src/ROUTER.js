@@ -41,7 +41,7 @@ function MyTabBar({state, descriptors, navigation}) {
     <View
       style={{
         flexDirection: 'row',
-        backgroundColor: 'purple',
+        backgroundColor: 'white',
         height: 60,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -106,11 +106,14 @@ function MyTabBar({state, descriptors, navigation}) {
                         ? 'plus-circle'
                         : 'rocket'
                     }
-                    color={isFocused ? '#3AB9D6' : '#fff'}
+                    color={isFocused ? '#78aef9' : '#ff5c2c'}
                   />
                 }
                 <Text
-                  style={{color: isFocused ? '#3AB9D6' : '#fff', fontSize: 10}}>
+                  style={{
+                    color: isFocused ? '#78aef9' : '#ff5c2c',
+                    fontSize: 10,
+                  }}>
                   {label}
                 </Text>
               </TouchableOpacity>
@@ -120,7 +123,7 @@ function MyTabBar({state, descriptors, navigation}) {
                   <View
                     style={{
                       elevation: 10,
-                      backgroundColor: 'red',
+                      backgroundColor: '#78aef9',
                       width: 70,
                       height: 25,
                       borderRadius: 10,
@@ -245,9 +248,9 @@ function CustomDrawerContent(props) {
 
   return (
     <Box style={{flex: 1}}>
-      <Box flex={0.9} bgColor={'#30294D'}>
+      <Box flex={0.9} bgColor={'white'}>
         <View style={{alignItems: 'center', marginTop: 50}}>
-          <Icon size={32} color="white" name="user" />
+          <Icon size={32} color="#78aef9" name="user" />
 
           <Text style={{color: 'white', marginTop: 10}}>
             {state.staffInfo.adSoyad}
@@ -259,7 +262,7 @@ function CustomDrawerContent(props) {
       <Box
         flex={0.1}
         style={{justifyContent: 'flex-end', paddingBottom: 15}}
-        bgColor={'#30294D'}>
+        bgColor={'white'}>
         <TouchableOpacity
           onPress={async () => {
             await storeStringAS('eMail', '');
@@ -275,14 +278,14 @@ function CustomDrawerContent(props) {
             }}>
             <View style={{justifyContent: 'center'}}>
               <Icon
-                color="white"
+                color="#ff5c2c"
                 size={16}
                 name="sign-out-alt"
-                style={{marginTop: 2}}
+                style={{marginTop: 3}}
               />
             </View>
             <View style={{justifyContent: 'center', paddingLeft: 10}}>
-              <Text style={{color: 'white'}}>Çıkış Yap</Text>
+              <Text style={{color: '#ff5c2c'}}>Çıkış Yap</Text>
             </View>
           </View>
         </TouchableOpacity>

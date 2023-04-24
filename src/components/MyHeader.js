@@ -15,8 +15,10 @@ export default MyHeader = props => {
     <Box
       style={{
         flexDirection: 'row',
-        height: 50,
-        backgroundColor: 'purple',
+        height: 60,
+        backgroundColor: 'white',
+        //borderBottomWidth: 1,
+        borderBottomColor: '#ff5c2c',
         padding: 15,
       }}>
       <View style={{justifyContent: 'center', flex: 1}}>
@@ -25,7 +27,7 @@ export default MyHeader = props => {
             onPress={() => {
               navigation.openDrawer();
             }}>
-            <Icon color="white" size={16} name="bars" />
+            <Icon color="#ff5c2c" size={16} name="bars" />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity

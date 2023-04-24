@@ -109,7 +109,7 @@ export default App = ({navigation, route}) => {
     console.log('loginReq', loginReq);
 
     if (loginReq?.result == 1) {
-      dispatch({type: 'STAFF_INFO', payload: loginReq});
+      dispatch({type: 'STAFF_INFO', payload: loginReq?.musteri_verisi});
       dispatch({type: 'TOKEN', payload: loginReq.token});
 
       await storeStringAS('eMail', eMail);
@@ -218,28 +218,30 @@ export default App = ({navigation, route}) => {
 
         <Text
           style={{
-            fontSize: hp('4%'),
-            marginTop: hp('15%'),
-            alignSelf: 'center',
-            color: '#47404E',
+            fontSize: hp('3%'),
+            marginTop: hp('10%'),
+            alignSelf: 'flex-start',
+            paddingLeft: '10%',
+            color: '#6d6e6e',
           }}>
-          Hoş Geldiniz
+          Hoş geldiniz!
         </Text>
 
         <View
           style={{
             width: '90%',
             alignSelf: 'center',
-            marginTop: hp('5%'),
+            marginTop: hp('3%'),
           }}>
           <TextInput
             style={{
               fontSize: 20,
-              height: 53,
+              height: 50,
               borderRadius: 30,
+              backgroundColor: '#edeff3',
               borderColor: genelRenk,
-              borderWidth: 1,
-              color: '#555',
+              //borderWidth: 1,
+              color: '#6d6e6e',
               textAlign: 'center',
             }}
             value={eMail}
@@ -253,11 +255,12 @@ export default App = ({navigation, route}) => {
           <TextInput
             style={{
               fontSize: 20,
-              height: 53,
+              height: 50,
               borderRadius: 30,
               borderColor: genelRenk,
-              borderWidth: 1,
-              color: '#555',
+              backgroundColor: '#edeff3',
+              //borderWidth: 1,
+              color: '#6d6e6e',
               textAlign: 'center',
               marginTop: 15,
             }}
@@ -275,14 +278,14 @@ export default App = ({navigation, route}) => {
             <TouchableOpacity
               disabled={btnIsLoading}
               activeOpacity={0.8}
-              style={{width: '100%'}}
+              style={{width: '100%', height: 50}}
               onPress={() => {
                 login();
               }}>
               <LinearGradient
                 angle={180}
                 useAngle={true}
-                colors={['#244161', '#244161']}
+                colors={['#ff5c2c', '#ff5c2c']}
                 style={styles.linearGradient}>
                 {btnIsLoading ? (
                   <Spinner color="#fff" />
@@ -334,7 +337,7 @@ var styles = StyleSheet.create({
     width: 200,
 
     borderWidth: 1,
-    borderColor: '#6441A5',
+    borderColor: '#feded4',
     borderRadius: 10,
   },
 });
